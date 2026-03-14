@@ -1,0 +1,62 @@
+using System;
+
+class calculadora
+{
+    static void Main()
+    {
+        int op = 0;
+
+        while (op != 5)
+        {
+            Console.WriteLine("***** MENU *****");
+            Console.WriteLine("1 - Somar dois numeros:");
+            Console.WriteLine("2 - Subtrair dois numeros:");
+            Console.WriteLine("3 - Multiplicar dois numeros:");
+            Console.WriteLine("4 - Dividir dois numeros:");
+            Console.WriteLine("5 - Sair");
+            Console.Write("Escolha uma opcao: ");
+
+            op = int.Parse(Console.ReadLine());
+
+            if (op >= 1 && op <= 4)
+            {
+                Console.Write("Digite o primeiro numero: ");
+                double n1 = double.Parse(Console.ReadLine());
+
+                Console.Write("Digite um segundo numero: ");
+                double n2 = double.Parse(Console.ReadLine());
+
+                switch (op)
+                {
+                    case 1:
+                        Console.WriteLine("Resultado e: " + (n1 + n2));
+                        break;
+
+                    case 2:
+                        Console.WriteLine("Resultado e: " + (n1 - n2));
+                        break;
+
+                    case 3:
+                        Console.WriteLine("Resultado e: " + (n1 * n2));
+                        break;
+
+                    case 4:
+                        if (n2 != 0)
+                            Console.WriteLine("Resultado e: " + (n1 / n2));
+                        else
+                            Console.WriteLine("Erro de divisao.");
+                        break;
+                }
+            }
+            else if (op != 5)
+            {
+                Console.WriteLine("***Opcao inválida.***");
+            }
+
+            Console.WriteLine();
+        }
+
+        Console.WriteLine("Programa encerrado.");
+    }
+}
+
