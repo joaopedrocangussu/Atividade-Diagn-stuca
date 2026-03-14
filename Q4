@@ -1,0 +1,72 @@
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        string[] alunos = new string[5];
+        double[] notas = new double[5];
+        int opcao;
+
+        do
+        {
+            Console.WriteLine("\nMENU");
+            Console.WriteLine("1 - Cadastrar aluno");
+            Console.WriteLine("2 - Listar alunos");
+            Console.WriteLine("3 - Mostrar media das notas");
+            Console.WriteLine("4 - Sair");
+            Console.Write("Escolha uma opcao: ");
+
+            opcao = int.Parse(Console.ReadLine());
+
+            switch (opcao)
+            {
+                case 1:
+                    for (int i = 0; i < 5; i++)
+                    {
+                        Console.Write("Digite o nome do aluno: ");
+                        alunos[i] = Console.ReadLine();
+
+                        Console.Write("Digite a nota: ");
+                        notas[i] = double.Parse(Console.ReadLine());
+                    }
+                    break;
+
+                case 2:
+                    Console.WriteLine("\nLista de alunos:");
+                    for (int i = 0; i < 5; i++)
+                    {
+                        Console.WriteLine(alunos[i] + " - Nota: " + notas[i]);
+                    }
+                    break;
+
+                case 3:
+                    double soma = 0;
+
+                    for (int i = 0; i < 5; i++)
+                    {
+                        soma += notas[i];
+                    }
+
+                    double media = soma / 5;
+                    Console.WriteLine("Media das notas: " + media);
+                    break;
+
+                case 4:
+                    Console.WriteLine("Programa encerrado.");
+                    break;
+
+                default:
+                    Console.WriteLine("Opção invalida!");
+                    break;
+            }
+
+        } while (opcao != 4);
+    }
+}
+
+
+
+
+
